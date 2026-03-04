@@ -10,13 +10,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t mp-api-jenkins .'
+                sh '/Applications/Docker.app/Contents/Resources/bin/docker build -t mp-api-jenkins .'
             }
         }
 
         stage('Run Docker Container') {
             steps {
-                sh 'docker run -d -p 8001:8000 mp-api-jenkins'
+                sh '/Applications/Docker.app/Contents/Resources/bin/docker run -d -p 8001:8000 mp-api-jenkins'
             }
         }
     }
